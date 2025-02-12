@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgreSql:
+    container_name: blogContainer
+    image: postgres:15
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgresUser
+      POSTGRES_PASSWORD: postgresuser@2003
+      POSTGRES_DB: postgres-blog-db
+    volumes:
+      - blog_postgres_data:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+
+volumes:
+  blog_postgres_data:

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Personal Blog App
+
+  datasource:
+    #jdbc:db://host:port/DbName
+    url: jdbc:postgresql://localhost:5434/postgres-blog-db
+    username: postgresUser
+    password: postgresuser@2003
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
