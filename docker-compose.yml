@@ -19,5 +19,6 @@ services:
         limits:
           memory: 200M
 
+
 volumes:
   blog_postgres_data:
