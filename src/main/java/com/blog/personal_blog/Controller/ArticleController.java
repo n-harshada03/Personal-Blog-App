@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/api/articles")
 public class ArticleController {
 
     private final ArticleService articleService;
@@ -19,7 +19,7 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @PostMapping("/post")
+    @PostMapping("/add")
     public ResponseEntity<String> postArticle(@RequestBody ArticleRequest articleRequest){
         boolean isPosted=articleService.addArticle(articleRequest);
         if(isPosted){
